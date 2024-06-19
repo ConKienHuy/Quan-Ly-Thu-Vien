@@ -43,7 +43,7 @@ public class Book implements Serializable {
 	private String isbn;
 	
 	@Column(name = "status")
-	private String status;
+	private Integer status;
 	
 	@Column(name = "create_date")
 	private Date createDate;
@@ -102,11 +102,11 @@ public class Book implements Serializable {
 		this.isbn = isbn;
 	}
 
-	public String getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 
