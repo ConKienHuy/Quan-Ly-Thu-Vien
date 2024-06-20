@@ -18,8 +18,22 @@ public class IssueService {
 	@Autowired
 	private IssueRepository issueRepository;
 	
-	public List<Issue> getAll(){
+	public List<Issue> readAll(){
 		return (List<Issue>) issueRepository.findAll();
+	}
+	
+	public Issue createIssue(Issue issue) {
+		issue.setIssueDate(new Date());
+		issue.setReturned(Constants.BOOK_NOT_RETURNED);
+		return issueRepository.save(issue);
+	}
+	
+	public Issue updateIssue(Issue issue) {
+		return issueRepository.save(issue);
+	}
+	
+	public void deleteIssue(Issue issue) {
+		issueRepository.delete(issue);
 	}
 	
 	public Issue findById(Long id) {
@@ -28,17 +42,6 @@ public class IssueService {
 	
 	public List<Issue> finAllUnreturned(){
 		return issueRepository.findByReturned(Constants.BOOK_NOT_RETURNED);
-	}
-	
-	public Issue createIssue(Issue issue) {
-		issue.setIssueDate(new Date());
-		issue.setReturned(Constants.BOOK_NOT_RETURNED);
-		
-		return issueRepository.save(issue);
-	}
-	
-	public Issue saveIssue(Issue issue) {
-		return issueRepository.save(issue);
 	}
 	
 	public Long countByMember(Member member) {

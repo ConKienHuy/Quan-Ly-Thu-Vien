@@ -39,6 +39,7 @@ public class CategoryController {
 	@GetMapping("/add")
 	public String showCategoryForm(Model model) {
 		// Tạo một Object category mới để mà nhận dữ liệu nhập vào
+		// ID category == null
 		model.addAttribute("category", new Category());
 		// Hiển thị view form
 		return "/category/form";
@@ -50,16 +51,18 @@ public class CategoryController {
 	
 	@GetMapping("/edit/{id}")
 	public String editCategory(@PathVariable("id") Long id, Model model) {
-		// Lấy category theo ID
 		Category category = categoryService.get(id);
-		// Truyền thông tin category vào model để đưa vào editform
-		model.addAttribute("category", category);
-		// Tìm kiếm /templates/category/form để trả về view
-		return "/category/form"; 
+		if(category != null){
+			// ID category != null
+			// Đưa category vào model, model đưa category lên view
+			model.addAttribute("category", category);
+			return "category/form";
+		}
+		 else 
+			return "redirect:/category/add"; 
 	}
 	
-	// Nhận xử lý cho edit và add
-	@PostMapping("/save") // User nhấn nút save sẽ chuyển tới xử lý này
+	@PostMapping("/save")	
 	public String saveCategory(@Valid Category category, BindingResult bindingResult, final RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) {
 			return "/category/form";
