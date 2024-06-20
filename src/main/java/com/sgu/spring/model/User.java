@@ -31,7 +31,7 @@ public class User implements Serializable{
 	
 	@NotNull
 	@Column(name = "active")
-	private String active;
+	private Integer active;
 	
 	@NotNull
 	@Column(name = "role")
@@ -49,7 +49,7 @@ public class User implements Serializable{
 	public User() {	}
 	
 	public User(@NotNull String displayName, @NotNull String username, @NotNull String password,
-			@NotNull String active, @NotNull String role, @NotNull String createdDate, @NotNull Date lastModifiedDate) {
+			@NotNull @NotNull Integer active, @NotNull String role, @NotNull String createdDate, @NotNull Date lastModifiedDate) {
 		this.displayName = displayName;
 		this.username = username;
 		this.password = password;
@@ -91,11 +91,11 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public String getActive() {
+	public @NotNull Integer getActive() {
 		return active;
 	}
 
-	public void setActive(String active) {
+	public void setActive(@NotNull Integer active) {
 		this.active = active;
 	}
 

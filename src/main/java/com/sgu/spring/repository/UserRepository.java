@@ -11,7 +11,7 @@ import com.sgu.spring.model.User;
 public interface UserRepository extends CrudRepository<User, Long> {
 	
 	public List<User> findAllByOrderByDisplayNameAsc();
-	public List<User> findAllByActiveOrderByDisplayNameAsc();
+	public List<User> findAllByActiveOrderByDisplayNameAsc(Integer active);
 	public User findByUsername(String username);
 }
 

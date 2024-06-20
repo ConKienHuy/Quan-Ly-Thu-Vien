@@ -34,6 +34,10 @@ public class Category implements Serializable{
 	@Column(name = "short_name")
 	private String shortName;
 	
+	@Column(name = "notes")
+	@Length(max = 1000, message = "*Must not exceed 1000 characters.")
+	private String notes;
+	
 	@Column(name = "create_date")
 	private Date createDate;
 	
@@ -63,6 +67,14 @@ public class Category implements Serializable{
 
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
+	}
+	
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+	
+	public String getNotes() {
+		return this.notes;
 	}
 
 	public Date getCreateDate() {
