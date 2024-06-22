@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spark LMS - Category Form</title>
+<title>Quản lý thư viện - Thể loại Form</title>
 
 <th:block th:replace="fragments/styles :: common"></th:block>
 
@@ -25,8 +25,8 @@
 					<div class="col-md-12 col-sm-12 col-xs-12">
 						<div class="x_panel">
 							<div class="x_title">
-								<h2 th:if="${category.id==null}">Add New Category</h2>
-								<h2 th:if="${category.id!=null}">Edit Category Data</h2>
+								<h2 th:if="${category.id==null}">Thêm thể loại sách mới</h2>
+								<h2 th:if="${category.id!=null}">Chỉnh sửa thông tin</h2>
 								<div class="clearfix"></div>
 							</div>
 							<div class="x_content">
@@ -38,7 +38,7 @@
 								<form th:action="@{/category/save}" method="post" th:object="${category}" class="form-horizontal form-label-left">
 								
 									<div class="form-group">
-                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Category Name <span class="required">*</span></label>
+                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tên Thể Loại <span class="required">*</span></label>
                         				<div class="col-md-4 col-sm-4 col-xs-12">
                           					<input type="text" th:field="*{name}" class="form-control col-md-7 col-xs-12">
 				                        </div>
@@ -48,7 +48,7 @@
 				                 	</div>
 				                 	
 				                 	<div class="form-group">
-                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Short Name <span class="required">*</span></label>
+                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tên Ký Hiệu <span class="required">*</span></label>
                         				<div class="col-md-4 col-sm-4 col-xs-12">
                           					<input type="text" th:field="*{shortName}" class="form-control col-md-7 col-xs-12" placeholder="e.g: ENG">
 				                        </div>
@@ -58,7 +58,7 @@
 				                 	</div>
 				                 	
 				                 	<div class="form-group">
-                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Notes </label>
+                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nghi chú </label>
                         				<div class="col-md-4 col-sm-4 col-xs-12">
                         					<textarea class="form-control col-md-7 col-xs-12" rows="3" th:field="*{notes}"></textarea>
 				                        </div>
@@ -78,9 +78,9 @@
 			                        			<button class="btn btn-primary" type="reset">Reset</button>
 			                        		</th:block>
 									  		<th:block th:if="${id!=null}">
-			                        			<button class="btn btn-primary" type="button" id="gotoListBtn" >Go to list page</button>
+			                        			<button class="btn btn-primary" type="button" id="gotoListBtn" >Trở về danh sách</button>
 			                        		</th:block>
-			                          		<button type="submit" class="btn btn-success">Save</button>
+			                          		<button type="submit" class="btn btn-success">Lưu</button>
 			                        	</div>
 			                      	</div>
 				                 	

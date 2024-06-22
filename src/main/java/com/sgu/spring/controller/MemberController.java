@@ -3,6 +3,7 @@ package com.sgu.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sgu.spring.commonValue.Constants;
@@ -56,7 +58,7 @@ public class MemberController {
 			return "redirect:/member/add";
 	}
 	
-	@PostMapping("/save")
+	@RequestMapping(value = {"/save"},method = RequestMethod.POST)
 	public String saveMember(@RequestBody Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) {
 			return "member/form";
