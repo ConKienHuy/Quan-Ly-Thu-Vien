@@ -3,6 +3,8 @@ package com.sgu.spring.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -18,30 +20,33 @@ public class Member implements Serializable {
 	@Column(name = "id")
 	private Long id;
 	
-	@NotEmpty(message = "*Please select member type")
-	@NotNull(message = "*Please select member type")
+	@NotEmpty(message = "*Vui lòng nhập loại member")
+	@NotNull(message = "*Vui lòng nhập loại member")
 	@Column(name = "type")
 	private String type;
 	
-	@NotEmpty(message = "*Please enter fisrt name")
-	@NotNull(message = "*Please enter fisrt name")
+	@NotEmpty(message = "*Vui lòng nhập tên")
+	@NotNull(message = "*Vui lòng nhập tên")
 	@Column(name = "first_name")
 	private String firstName;
 	
-	@NotEmpty(message = "*Please enter middle name")
-	@NotNull(message = "*Please enter middle name")
+	@NotEmpty(message = "*Vui lòng nhập tên lót")
+	@NotNull(message = "*Vui lòng nhập tên lót")
 	@Column(name = "middle_name")
 	private String middleName;
 	
+	@NotEmpty(message = "*Vui lòng nhập tên đệm")
+	@NotNull(message = "*Vui lòng nhập tên đệm")
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@NotEmpty(message = "*Please select gender")
-	@NotNull(message = "*Please select gender")
+	@NotEmpty(message = "*Vui lòng chọn giới tính")
+	@NotNull(message = "*Vui lòng chọn giới tính")
 	@Column(name = "gender")
 	private String gender;
 	
-	@NotNull(message = "*Please enter birth date")
+	@NotNull(message = "*Vui lòng nhập ngày sinh")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	@Column(name = "date_of_birth")
 	private Date dateOfBirth;
 	

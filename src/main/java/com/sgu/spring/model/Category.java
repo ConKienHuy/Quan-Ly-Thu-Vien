@@ -28,14 +28,14 @@ public class Category implements Serializable{
 	@Column(name = "name")
 	private String name;
 	
-	@NotNull(message = "*Please enter category short name")
-	@NotBlank(message = "*Please enter category short name")
-	@Length(max = 4, message = "*Must not excedd 4 character")
+	@NotNull(message = "*Vui lòng nhập tên ngắn")
+	@NotBlank(message = "*Vui lòng nhập tên ngắn")
+	@Length(max = 4, message = "*Không được vượt quá 4 ký tự")
 	@Column(name = "short_name")
 	private String shortName;
 	
 	@Column(name = "notes")
-	@Length(max = 1000, message = "*Must not exceed 1000 characters.")
+	@Length(max = 1000, message = "*Không được vượt quá 1000 ký tự.")
 	private String notes;
 	
 	@Column(name = "create_date")

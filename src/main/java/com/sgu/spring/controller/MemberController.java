@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sgu.spring.commonValue.Constants;
 import com.sgu.spring.model.Member;
 import com.sgu.spring.service.MemberService;
+
+import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/member")
@@ -59,7 +62,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = {"/save"},method = RequestMethod.POST)
-	public String saveMember(@RequestBody Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+	public String saveMember(@Valid Member member, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		if(bindingResult.hasErrors()) {
 			return "member/form";
 		}
@@ -78,7 +81,7 @@ public class MemberController {
 		}
 	}
 	
-	@GetMapping("/delete/{id}")
+	@GetMapping("/remove/{id}")
 	public String deleteMember(@PathVariable("id") Long id, Model model) {
 		Member member = memberService.findByID(id);
 		
