@@ -58,7 +58,7 @@ public class IssueController {
 	}
 	
 	@ModelAttribute(name = "books")
-	public List<Book> getBooksFromCategory(){
+	public List<Book> getBooksFromCategory(Model model){
 		return bookService.getByCategory(null);
 	}
 }
