@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sgu.spring.commonValue.Constants;
 import com.sgu.spring.model.Member;
 import com.sgu.spring.repository.MemberRepository;
 
@@ -44,5 +45,17 @@ public class MemberService {
 	//  Kiểm tra khóa ngoại
 	public boolean hasForeignKey(Member member) {
 		return issueService.countByMember(member) > 0;
+	}
+
+	public Long getTotalCount() {
+		return memberRepository.count();
+	}
+
+	public Long getStudentsCount() {
+		return memberRepository.countByType(Constants.MEMBER_STUDENT);
+	}
+
+	public Long getParentsCount() {
+		return memberRepository.countByType(Constants.MEMBER_PARENT);
 	}
 }

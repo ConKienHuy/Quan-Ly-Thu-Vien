@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spark LMS - Issue Form</title>
+<title>Quản lý thư viện - Yêu cầu mượn sách</title>
 
 <th:block th:replace="fragments/styles :: common"></th:block>
 
@@ -43,50 +43,28 @@
 								<form class="form-horizontal form-label-left">
 									<div class="row">
 										<div class="col-sm-5">
-										
-											<div class="form-group">
-						                    	<label class="control-label col-md-4 col-sm-4 col-xs-12">Loại thành viên</label>
-						                        <div class="col-md-8 col-sm-8 col-xs-12">
-						                        	<select class="form-control" id="memberTypeSel">
-						                        		<option value="">-- Chọn loại thành viên --</option>
-						                        		<option th:each="mt : ${memberTypes}" th:value="${mt}" th:text="${mt}"></option>
-						                        	</select>
-						                        </div>
-					                 		</div>
 					                 		
 					                 		<div class="form-group">
 						                    	<label class="control-label col-md-4 col-sm-4 col-xs-12">Thành viên</label>
 						                        <div class="col-md-8 col-sm-8 col-xs-12">
 						                        	<select class="form-control" id="memberSel">
 						                        		<option value="">-- Chọn Thành Viên --</option>
-						                        		<option th:each="mt : ${memberTypes}" th:value="${mt}" th:text="${mt}"></option>
+						                        		<option th:each="m : ${members}" th:value="${m.id}" th:text="${m.firstName}"></option>
 						                        	</select>
 						                        </div>
 					                 		</div>
-					                 		
+					                 		<div class="col-md-3 col-sm-3 col-xs-3" >
+						                        	<button type="button" style="float:right;" id="addBookBtn" class="btn">Thêm sách</button>
+						                    </div>
 										</div>
 										<div class="col-sm-7" style="padding-left: 0px;">
-										
-											<div class="form-group">
-						                    	<label class="control-label col-md-3 col-sm-3 col-xs-12">Thể loại</label>
-						                        <div class="col-md-6 col-sm-6 col-xs-12">
-						                        	<select class="form-control" id="categorySel">
-						                        		<option value="">-- Chọn Thể Loại --</option>
-						                        		<option th:each="c : ${categories}" th:value="${c.id}" th:text="${c.name}"></option>
-						                        	</select>
-						                        </div>
-						                        <div class="col-md-3 col-sm-3 col-xs-3" >
-						                        	<button type="button" style="float:right;" id="addBookBtn" class="btn">Thêm sách</button>
-						                        </div>
-						                        
-					                 		</div>
 										
 											<div class="form-group">
 						                    	<label class="control-label col-md-3 col-sm-3 col-xs-12">Sách</label>
 						                        <div class="col-md-9 col-sm-9 col-xs-12">
 						                        	<select class="form-control" id="booksSel">
 						                        		<option value="">-- Chọn Sách --</option>
-						                        		
+						                        		<option th:each="b : ${books}" th:value="${b.id}" th:text="${b.title}"></option>
 						                        	</select>
 						                        </div>
 					                 		</div>

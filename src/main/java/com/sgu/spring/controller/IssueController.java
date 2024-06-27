@@ -18,9 +18,11 @@ import com.sgu.spring.commonValue.Constants;
 import com.sgu.spring.model.Book;
 import com.sgu.spring.model.Category;
 import com.sgu.spring.model.Issue;
+import com.sgu.spring.model.Member;
 import com.sgu.spring.service.BookService;
 import com.sgu.spring.service.CategoryService;
 import com.sgu.spring.service.IssueService;
+import com.sgu.spring.service.MemberService;
 
 @Controller
 @RequestMapping("/issue")
@@ -42,23 +44,18 @@ public class IssueController {
 	}
 	
 	@Autowired
-	private CategoryService categoryService;
+	private MemberService memberService;
 	
 	@Autowired
 	private BookService bookService;
 	
-	@ModelAttribute(name = "memberTypes")
-	public List<String> memberTypes() {
-		return Constants.MEMBER_TYPES;
-	}
-	
-	@ModelAttribute(name = "categories")
-	public List<Category> getCategories() {
-		return categoryService.getAllBySort();
+	@ModelAttribute(name = "members")
+	public List<Member> memberTypes() {
+		return memberService.readAll();
 	}
 	
 	@ModelAttribute(name = "books")
 	public List<Book> getBooksFromCategory(Model model){
-		return bookService.getByCategory(null);
+		return bookService.getAll();
 	}
 }
