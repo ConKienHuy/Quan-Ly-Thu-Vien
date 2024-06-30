@@ -21,18 +21,18 @@ public class Book implements Serializable {
 	@Column(name = "id")
 	private Long id;
 	
-	@NotNull(message = "*Please enter book title")
-	@NotBlank(message = "*Please enter book title")
+	@NotNull(message = "*Vui lòng nhập tên sách")
+	@NotBlank(message = "*Vui lòng nhập tên sách")
 	@Column(name = "title")
 	private String title;
 	
-	@NotNull(message = "*Please enter book tag")
-	@NotBlank(message = "*Please enter book tag")
+	@NotNull(message = "*Vui lòng nhập tag")
+	@NotBlank(message = "*Vui lòng nhập tag")
 	@Column(name = "tag")
 	private String tag;
 	
-	@NotNull(message = "*Please enter book authors")
-	@NotBlank(message = "*Please enter book authors")
+	@NotNull(message = "*Vui lòng nhập tên tác giả")
+	@NotBlank(message = "*Vui lòng nhập tên tác giả")
 	@Column(name = "authors")
 	private String authors;
 	
