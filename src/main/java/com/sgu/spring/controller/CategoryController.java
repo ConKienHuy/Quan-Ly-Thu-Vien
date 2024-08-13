@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.sgu.spring.model.Category;
+import com.sgu.spring.entity.Category;
 import com.sgu.spring.service.CategoryService;
 
 import jakarta.validation.Valid;
@@ -26,7 +26,7 @@ public class CategoryController {
 	@Autowired
 	private CategoryService categoryService;
 	
-	@GetMapping("/list")
+	@GetMapping(value={"","/list"})
 	public String showCategoryPage(Model model) {
 		// Lấy List category
 		List<Category> categories = categoryService.getAllBySort();

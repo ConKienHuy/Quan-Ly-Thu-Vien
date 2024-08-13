@@ -3,7 +3,7 @@ package com.sgu.spring.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sgu.spring.model.User;
+import com.sgu.spring.entity.User;
 import com.sgu.spring.repository.UserRepository;
 
 @Service

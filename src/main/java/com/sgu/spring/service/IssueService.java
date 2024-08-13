@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sgu.spring.model.Issue;
-import com.sgu.spring.model.Member;
+import com.sgu.spring.entity.Issue;
+import com.sgu.spring.entity.Member;
 import com.sgu.spring.repository.IssueRepository;
 
 import com.sgu.spring.commonValue.Constants;

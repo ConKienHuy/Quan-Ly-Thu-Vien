@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.sgu.spring.model.User;
+import com.sgu.spring.entity.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sgu.spring.model.Book;
-import com.sgu.spring.model.Issue;
-import com.sgu.spring.model.Member;
-import com.sgu.spring.service.BookService;
+import com.sgu.spring.entity.Book;
+import com.sgu.spring.entity.Issue;
+import com.sgu.spring.entity.Member;
+import com.sgu.spring.service.bookservice.BookService;
 import com.sgu.spring.service.IssueService;
 import com.sgu.spring.service.MemberService;
 

@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sgu.spring.commonValue.Constants;
-import com.sgu.spring.model.Book;
-import com.sgu.spring.model.IssuedBook;
+import com.sgu.spring.entity.Book;
+import com.sgu.spring.entity.IssuedBook;
 import com.sgu.spring.repository.IssuedBookRepository;
 
 @Service

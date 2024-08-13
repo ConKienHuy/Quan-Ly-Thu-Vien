@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sgu.spring.model.User;
+import com.sgu.spring.entity.User;
 import com.sgu.spring.service.HomeService;
 import com.sgu.spring.service.UserService;
 

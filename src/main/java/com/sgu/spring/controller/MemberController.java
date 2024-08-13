@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sgu.spring.commonValue.Constants;
-import com.sgu.spring.model.Member;
+import com.sgu.spring.entity.Member;
 import com.sgu.spring.service.MemberService;
 
 import jakarta.validation.Valid;

@@ -1,4 +1,4 @@
-package com.sgu.spring.model;
+package com.sgu.spring.entity;
 
 import java.io.Serializable;
 

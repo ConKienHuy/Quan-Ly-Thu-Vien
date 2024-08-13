@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sgu.spring.commonValue.Constants;
-import com.sgu.spring.model.Member;
+import com.sgu.spring.entity.Member;
 import com.sgu.spring.repository.MemberRepository;
 
 @Service
