@@ -1,4 +1,4 @@
-package com.sgu.spring.service;
+package com.sgu.spring.service.categoryservice;
 
 import java.util.Date;
 import java.util.List;
@@ -10,10 +10,14 @@ import com.sgu.spring.entity.Category;
 import com.sgu.spring.repository.CategoryRepository;
 
 @Service
-public class CategoryService {
+public class CategoryServiceImpl implements CategoryService {
+
+	private CategoryRepository categoryRepository;
 
 	@Autowired
-	private CategoryRepository categoryRepository;
+	public CategoryServiceImpl(CategoryRepository categoryRepository) {
+		this.categoryRepository = categoryRepository;
+	}
 	
 	public Long getTotalCount() {
 		return categoryRepository.count();

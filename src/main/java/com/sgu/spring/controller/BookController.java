@@ -3,7 +3,7 @@ package com.sgu.spring.controller;
 import com.sgu.spring.entity.Book;
 import com.sgu.spring.entity.Category;
 import com.sgu.spring.service.bookservice.BookService;
-import com.sgu.spring.service.CategoryService;
+import com.sgu.spring.service.categoryservice.CategoryServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,17 +23,17 @@ public class BookController {
 
 	private BookService bookService;
 
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryServiceImpl;
 
 	@Autowired
-	public BookController(BookService bookService, CategoryService categoryService) {
+	public BookController(BookService bookService, CategoryServiceImpl categoryServiceImpl) {
 		this.bookService = bookService;
-		this.categoryService = categoryService;
+		this.categoryServiceImpl = categoryServiceImpl;
 	} // Spring going to find and inject any instance that implements BookService
 
 	@ModelAttribute(name = "categories")
 	public List<Category> categories() {
-		return categoryService.getAllBySort();
+		return categoryServiceImpl.getAllBySort();
 	}
 	
 	@RequestMapping(value = {"", "/list"}, method = RequestMethod.GET)

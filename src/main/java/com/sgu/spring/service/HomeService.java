@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.sgu.spring.service.bookservice.BookService;
+import com.sgu.spring.service.categoryservice.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +15,7 @@ public class HomeService {
 	private MemberService memberService;
 	
 	@Autowired
-	private CategoryService categoryService;
+	private CategoryServiceImpl categoryServiceImpl;
 	
 	@Autowired
 	private BookService bookService;
@@ -24,7 +25,7 @@ public class HomeService {
 		map.put("totalMembers", memberService.getTotalCount());
 		map.put("totalStudents", memberService.getStudentsCount());
 		map.put("totalParents", memberService.getParentsCount());
-		map.put("totalCategories", categoryService.getTotalCount());
+		map.put("totalCategories", categoryServiceImpl.getTotalCount());
 		map.put("totalBooks", bookService.getTotalCount());
 		map.put("totalIssuedBooks", bookService.getTotalIssuedBooks());
 		return map;
